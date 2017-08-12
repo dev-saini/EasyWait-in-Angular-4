@@ -1,0 +1,13 @@
+<h1 align="center">Display Queue Status</h1>
+
+<body>
+
+	<h4 align="center"> Enter the queue ID </h4>
+
+	<input type="text" [(ngModel)] = "queue_id" (keyup.enter)="onKeyUp()"/>	<br>
+
+	<button (click)="onClick()">Submit</button>	<br>
+
+	<label>Queue Position :  {{queue_position}} </label>
+
+</body>
