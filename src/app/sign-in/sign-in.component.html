@@ -1,0 +1,15 @@
+<h1 align="center">Sign In</h1>
+
+<body>
+
+	<h4 align="center"> Enter your email id </h4>	
+	<input type="email" [(ngModel)] = "email"/>	<br>
+
+	<h4 align="center"> Enter your password </h4>	
+	<input type="password" [(ngModel)] = "password" (keyup.enter)="onKeyUp()"/>	<br>
+
+	<button (click)="onClick()">Submit</button>	<br>
+
+	<label> token value = {{ token }}</label>
+
+</body>

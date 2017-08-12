@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
-import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-queue-status',
@@ -13,7 +12,7 @@ export class QueueStatusComponent implements OnInit {
 
 	results: any;
 	queue_position: string;
-	url = 'http://52.24.120.4:8001/api/queue/';
+	private url = 'http://52.24.120.4:8001/api/queue/';
 	queue_id: String;
 
   	onClick(){
