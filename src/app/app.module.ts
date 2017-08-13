@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';	
 import { NgModule } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 import { QueueStatusComponent } from './queue-status/queue-status.component';
@@ -23,7 +24,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     FormsModule
   ],
 
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
