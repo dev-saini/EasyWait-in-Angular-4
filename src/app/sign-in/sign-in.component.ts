@@ -10,6 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class SignInComponent implements OnInit {
 
+  name: string;
 	email: string;
 	password: string;
 	token: string;
@@ -36,7 +37,10 @@ export class SignInComponent implements OnInit {
   		.subscribe((response: Response) => {
 
         this.token = response['token'];
+        this.name = response['name'];
+
   			this.storeTokenInCookie();
+        this.displayName();
 
       }, (error: Response) => {
 
@@ -60,8 +64,13 @@ export class SignInComponent implements OnInit {
 
       this.cookieValue = this.cookieService.get('sign_up_token');
 
-      console.log(this.cookieValue)
+      console.log(this.cookieValue);
     }
 
+    displayName() {
 
+      var label = document.getElementById('display_name_sign_in');
+
+      label.innerHTML = 'Welcome, ' + this.name + '!';
+    }
 }

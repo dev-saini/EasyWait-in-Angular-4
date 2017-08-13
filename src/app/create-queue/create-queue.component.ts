@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-queue',
@@ -10,9 +12,10 @@ import { Response } from '@angular/http';
 export class CreateQueueComponent implements OnInit {
 
 	queue_name: string;
-	private url: 'http://52.24.120.4:8001/api/queue';
+	private url = 'http://52.24.120.4:8001/api/queue';
+  queue_id: string;
 
-  	constructor(http: HttpClient) { }
+  	constructor(private http : HttpClient, private cookieService : CookieService) { }
 
   	ngOnInit() {
   	}
@@ -26,6 +29,54 @@ export class CreateQueueComponent implements OnInit {
   	}
 
   	getJSON() {
-  		
+
+        let post = {name: this.queue_name};
+
+        this.http.post(this.url, post, {
+
+          headers: new HttpHeaders()
+          .set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
+
+        })
+        .subscribe(
+          (response: Response) => {
+
+            if(response['error'] == false) {
+
+                this.queue_id = response['id'];
+                this.queue_name = response['name'];
+
+                console.log('Hello');
+
+                this.displayName();
+
+          } else {
+
+            console.log(response);
+            var temp = response['details'];
+            this.queue_id = temp['message'];
+
+            this.displayName();
+
+          }
+
+          console.log(response);
+
+      }, (error: Response) => {
+
+        if(error.status == 401)
+          alert('Please Login-in to continue.');
+        else
+          alert('An unexpected error occured.');
+
+      });
   	}
+
+    displayName() {
+
+      var label = document.getElementById('queue_id&name');
+
+      label.innerHTML = 'Queue ID: ' + this.queue_id + '.' + ' Queue Name: ' + this.queue_name;
+    }
 }
+

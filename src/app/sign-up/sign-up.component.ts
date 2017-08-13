@@ -39,7 +39,9 @@ export class SignUpComponent implements OnInit {
         (response: Response) => {
 
   			this.token = response['token'];
+
   			this.storeTokenInCookie();
+        this.displayName();
 
   		}, (error: Response) => {
 
@@ -61,11 +63,16 @@ export class SignUpComponent implements OnInit {
 
       this.cookieService.set('sign_up_token',this.token, expiry_date);
 
-      console.log(expiry_date);
-
       this.cookieValue = this.cookieService.get('sign_up_token');
 
-      console.log(this.cookieValue)
+      console.log(this.cookieValue);
+    }
+
+    displayName() {
+
+      var label = document.getElementById('display_name_sign_up');
+
+      label.innerHTML = 'Welcome, ' + this.name + '!';
     }
 
 }
