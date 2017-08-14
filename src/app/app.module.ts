@@ -10,6 +10,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { CreateQueueComponent } from './create-queue/create-queue.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ListOfQueuesComponent } from './list-of-queues/list-of-queues.component';
+import { MoveToNextPositionComponent } from './move-to-next-position/move-to-next-position.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListOfQueuesComponent } from './list-of-queues/list-of-queues.component
     SignUpComponent,
     CreateQueueComponent,
     SignInComponent,
-    ListOfQueuesComponent
+    ListOfQueuesComponent,
+    MoveToNextPositionComponent
   ],
   imports: [
     BrowserModule,

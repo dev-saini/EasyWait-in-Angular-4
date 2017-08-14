@@ -46,8 +46,6 @@ export class CreateQueueComponent implements OnInit {
                 this.queue_id = response['id'];
                 this.queue_name = response['name'];
 
-                console.log('Hello');
-
                 this.displayName();
 
           } else {

@@ -15,8 +15,6 @@ export class ListOfQueuesComponent implements OnInit {
 
 	private url = 'http://52.24.120.4:8001/api/queue';
 	queuelist: string;
-	queuedetail: string;
-	queue_id: string;
 
   	constructor(private http : HttpClient, private cookieService : CookieService) { }
 
@@ -44,18 +42,20 @@ export class ListOfQueuesComponent implements OnInit {
   			} else {
 
   				console.log(response['message']);
+          alert(response['message']);
 
   			}
 
 
-  		}), (error: Response) => {
+  		}, (error: Response) => {
 
         	if(error.status == 401)
+          {
          		alert('Please Login-in to continue.');
-        	else
+          } else {
           		alert('An unexpected error occured.');
- 
-  			}  	
+           }
+  			})	
   	}
 
 }
