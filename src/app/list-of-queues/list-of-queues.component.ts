@@ -49,12 +49,14 @@ export class ListOfQueuesComponent implements OnInit {
 
   		}, (error: Response) => {
 
-        	if(error.status == 401)
-          {
+        	if(error.status == 401) {
          		alert('Please Login-in to continue.');
+          } else if(error.status == 204) {
+          		alert('You have created no queues.');
           } else {
-          		alert('An unexpected error occured.');
-           }
+            alert('An unexpected error occurred.')
+          }
+
   			})	
   	}
 

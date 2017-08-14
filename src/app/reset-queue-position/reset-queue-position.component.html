@@ -1,0 +1,12 @@
+<h1 align="center">Reset Queue Position</h1>
+
+<body>
+
+	<h4 align="center"> Enter your queue id </h4>	
+	<input type="text" [(ngModel)] = "queue_id" (keyup.enter)="onKeyUp()"/>	<br>
+
+	<button (click)="onClick()">Submit</button>	<br>
+
+	<label id="reset_position"> </label>
+
+</body>
