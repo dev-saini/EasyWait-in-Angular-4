@@ -1,0 +1,16 @@
+<h1 align="center">Appointment Administration</h1>
+
+<body>
+
+	<h4 align="center"> Enter the queue ID</h4>	
+	<input type="text" [(ngModel)] = "queue_id"/>	<br>
+
+	<button (click)="onClickOpen()">Open</button>	<br>
+
+	<button (click)="onClickClose()">Close</button>	<br>
+
+	<button (click)="onClickReset()">Reset</button>	<br>
+
+	<label id='appointment_status'> </label>
+
+</body>
