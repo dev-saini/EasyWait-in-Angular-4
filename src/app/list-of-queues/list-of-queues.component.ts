@@ -1,0 +1,61 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Response } from '@angular/http';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpHeaders } from '@angular/common/http';
+
+
+@Component({
+  selector: 'app-list-of-queues',
+  templateUrl: './list-of-queues.component.html',
+  styleUrls: ['./list-of-queues.component.css']
+})
+
+export class ListOfQueuesComponent implements OnInit {
+
+	private url = 'http://52.24.120.4:8001/api/queue';
+	queuelist: string;
+	queuedetail: string;
+	queue_id: string;
+
+  	constructor(private http : HttpClient, private cookieService : CookieService) { }
+
+  	ngOnInit() {
+  	}
+
+  	onClick() {
+  		this.getJSON();
+  	}
+
+  	getJSON() {
+
+  		this.http.get(this.url, {
+
+          headers: new HttpHeaders()
+          .set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
+
+        })
+  		.subscribe( (response: Response) => {
+
+  			if(response['error'] == false) {
+
+  				this.queuelist = response['queues'];
+  				
+  			} else {
+
+  				console.log(response['message']);
+
+  			}
+
+
+  		}), (error: Response) => {
+
+        	if(error.status == 401)
+         		alert('Please Login-in to continue.');
+        	else
+          		alert('An unexpected error occured.');
+ 
+  			}  	
+  	}
+
+}

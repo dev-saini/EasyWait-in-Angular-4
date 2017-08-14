@@ -9,6 +9,7 @@ import { QueueStatusComponent } from './queue-status/queue-status.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CreateQueueComponent } from './create-queue/create-queue.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { ListOfQueuesComponent } from './list-of-queues/list-of-queues.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     QueueStatusComponent,
     SignUpComponent,
     CreateQueueComponent,
-    SignInComponent
+    SignInComponent,
+    ListOfQueuesComponent
   ],
   imports: [
     BrowserModule,

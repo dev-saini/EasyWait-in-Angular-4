@@ -1,0 +1,17 @@
+<h1 align='center'>List of Queues</h1>
+
+<body>
+
+		<h4 align="center"> Click here to get the list of queues  </h4>
+		
+		<button (click)="onClick()"> Submit </button> <br>
+
+		<ul> 
+			<li *ngFor = 'let queuedetail of queuelist'>
+
+			{{queuedetail.name}}: {{queuedetail.id}} 
+
+			</li> 
+		</ul>
+
+</body>

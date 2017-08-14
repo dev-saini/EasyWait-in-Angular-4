@@ -56,7 +56,7 @@ export class CreateQueueComponent implements OnInit {
             var temp = response['details'];
             this.queue_id = temp['message'];
 
-            this.displayName();
+            alert(this.queue_id);
 
           }
 
