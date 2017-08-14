@@ -12,6 +12,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { ListOfQueuesComponent } from './list-of-queues/list-of-queues.component';
 import { MoveToNextPositionComponent } from './move-to-next-position/move-to-next-position.component';
 import { ResetQueuePositionComponent } from './reset-queue-position/reset-queue-position.component';
+import { QueueCurrentStateComponent } from './queue-current-state/queue-current-state.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ResetQueuePositionComponent } from './reset-queue-position/reset-queue-
     SignInComponent,
     ListOfQueuesComponent,
     MoveToNextPositionComponent,
-    ResetQueuePositionComponent
+    ResetQueuePositionComponent,
+    QueueCurrentStateComponent
   ],
   imports: [
     BrowserModule,
