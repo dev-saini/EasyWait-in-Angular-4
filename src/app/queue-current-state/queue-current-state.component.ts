@@ -41,7 +41,7 @@ export class QueueCurrentStateComponent implements OnInit {
   		.subscribe( (response: Response) => {
 
   			this.queue_id = response['id'];
-  			this.queue_name = response['mame'];
+  			this.queue_name = response['name'];
   			this.queue_current_position = response['position'];
   			this.accepting_appointments = response['accepting_appointments'];
   			this.displayResult();

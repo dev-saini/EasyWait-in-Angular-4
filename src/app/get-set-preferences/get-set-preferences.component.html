@@ -1,0 +1,24 @@
+<h1 align="center">Get/Set Queue Preferences</h1>
+
+<body>
+
+	<h4 align="center"> Enter the queue ID</h4>	
+	<input type="text" [(ngModel)] = "queue_id"/>	<br>
+
+	<h4 align="center"> Enter the initial free slot count</h4>	
+	<input type="text" [(ngModel)] = "initial_free_slots"/>	<br>	
+
+	<h4 align="center"> Enter the recurring free slot count</h4>	
+	<input type="text" [(ngModel)] = "recurring_free_slot"/>	<br>	
+
+	<button (click)="onClickSet()">Set</button>	<br>
+
+	<h4 align="center"> Get the initial free slots and recurring free slot count</h4>
+
+	<button (click)="onClickGet()">Get</button>	<br>
+
+	<label id='set_preference'> </label> <br> <br> <br>
+
+	<label id='get_preference'>	</label>
+
+</body>

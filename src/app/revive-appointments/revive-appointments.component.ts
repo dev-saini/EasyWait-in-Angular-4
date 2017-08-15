@@ -60,7 +60,7 @@ export class ReviveAppointmentsComponent implements OnInit {
 
   		var label = document.getElementById('revive');
 
-  		label.innerHTML = 'Status: ' + this.name;
+  		label.innerHTML = 'Check console for results';
   	}
 
 

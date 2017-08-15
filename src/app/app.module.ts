@@ -17,6 +17,7 @@ import { AppointmentAdministrationComponent } from './appointment-administration
 import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 import { ReviveAppointmentsComponent } from './revive-appointments/revive-appointments.component';
 import { CancelAppointmentComponent } from './cancel-appointment/cancel-appointment.component';
+import { GetSetPreferencesComponent } from './get-set-preferences/get-set-preferences.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CancelAppointmentComponent } from './cancel-appointment/cancel-appointm
     AppointmentAdministrationComponent,
     BookAppointmentComponent,
     ReviveAppointmentsComponent,
-    CancelAppointmentComponent
+    CancelAppointmentComponent,
+    GetSetPreferencesComponent
   ],
   imports: [
     BrowserModule,

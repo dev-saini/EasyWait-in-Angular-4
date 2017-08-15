@@ -50,8 +50,17 @@ export class QueueStatusComponent implements OnInit {
   		console.log(res);
 
 		this.queue_position = res['position'];
+
+    this.displayResult();
   		
   	});
+  }
+
+  displayResult() {
+
+    var label = document.getElementById('queue_status');
+
+    label.innerHTML = 'Queue Position: ' + this.queue_position;
   }
   
 }
