@@ -1,0 +1,15 @@
+<h1 align="center">Cancel Appointment</h1>
+
+<body>
+
+	<h4 align="center"> Enter the queue ID</h4>	
+	<input type="text" [(ngModel)] = "queue_id"/>	<br>
+
+	<h4 align="center"> Enter the position to be cancelled</h4>	
+	<input type="text" [(ngModel)] = "position"/>	<br>
+
+	<button (click)="onClickBook()">Cancel</button>	<br>
+
+	<label id='cancel_status'> </label>
+
+</body>

@@ -37,6 +37,7 @@ export class ListOfQueuesComponent implements OnInit {
 
   			if(response['error'] == false) {
 
+          console.log(response);
   				this.queuelist = response['queues'];
   				
   			} else {
