@@ -1,0 +1,15 @@
+<h1 align="center">Book Appointment</h1>
+
+<body>
+
+	<h4 align="center"> Enter the queue ID</h4>	
+	<input type="text" [(ngModel)] = "queue_id"/>	<br>
+
+	<h4 align="center"> Enter the reference name</h4>	
+	<input type="text" [(ngModel)] = "reference_name"/>	<br>
+
+	<button (click)="onClickBook()">Book</button>	<br>
+
+	<label id='booking_status'> </label>
+
+</body>

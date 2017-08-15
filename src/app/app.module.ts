@@ -14,6 +14,7 @@ import { MoveToNextPositionComponent } from './move-to-next-position/move-to-nex
 import { ResetQueuePositionComponent } from './reset-queue-position/reset-queue-position.component';
 import { QueueCurrentStateComponent } from './queue-current-state/queue-current-state.component';
 import { AppointmentAdministrationComponent } from './appointment-administration/appointment-administration.component';
+import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AppointmentAdministrationComponent } from './appointment-administration
     MoveToNextPositionComponent,
     ResetQueuePositionComponent,
     QueueCurrentStateComponent,
-    AppointmentAdministrationComponent
+    AppointmentAdministrationComponent,
+    BookAppointmentComponent
   ],
   imports: [
     BrowserModule,
