@@ -15,7 +15,7 @@ export class AppointmentAdministrationComponent implements OnInit {
 	queue_id: string;
 	status: string;
 
-  	constructor(private http : HttpClient123, private cookieService : CookieService) { }
+  	constructor(private http : HttpClient, private cookieService : CookieService) { }
 
   ngOnInit() {
   }
