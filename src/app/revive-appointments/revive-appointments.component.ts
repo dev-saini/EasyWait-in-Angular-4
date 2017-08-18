@@ -37,9 +37,9 @@ export class ReviveAppointmentsComponent implements OnInit {
 				.subscribe((response: Response) => {
 
 					console.log(response);
-					this.appointments = response['appointments'];
+					/*this.appointments = response['appointments'];
 					this.status = this.appointments[0];
-					this.name = this.status['reference'];
+					this.name = this.status['reference'];*/
 
 					this.displayResult();
 
@@ -50,7 +50,7 @@ export class ReviveAppointmentsComponent implements OnInit {
 		      	else if(error.status == 404)
 		      		alert('Requested Queue could not be found');
 		      	else if(error.status == 403)
-		      		alert('Appointments CLosed');
+		      		alert('Appointments Closed');
 
 		      });
 
