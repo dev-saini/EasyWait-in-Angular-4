@@ -1,16 +1,18 @@
-<h1 align="center">Appointment Administration</h1>
+<div align="center">
+	<h1>Appointment Administration</h1>
 
-<body>
+	<body>
 
-	<h4 align="center"> Enter the queue ID</h4>	
-	<input type="text" [(ngModel)] = "queue_id"/><br>
+		<h4>Enter the queue ID</h4>	
+		<input type="text" [(ngModel)] = "queue_id"/><br>
 
-	<button type="button" class="btn btn-success" (click)="onClickOpen()">Open</button>	<br>
+		<button type="button" class="btn btn-success" (click)="onClickOpen()">Open</button>	<br>
 
-	<button class="btn btn-warning" (click)="onClickClose()">Close</button>	<br>
+		<button class="btn btn-warning" (click)="onClickClose()">Close</button>	<br>
 
-	<button class="btn btn-danger" (click)="onClickReset()">Reset</button>	<br>
+		<button class="btn btn-danger" (click)="onClickReset()">Reset</button>	<br>
 
-	<label id='appointment_status'> </label>
+		<label id='appointment_status'> </label>
 
-</body>
+	</body>
+</div>

@@ -1,24 +1,26 @@
-<h1 align="center">Get/Set Queue Preferences</h1>
+<div align="center">
+	<h1>Get/Set Queue Preferences</h1>
 
-<body>
+	<body>
 
-	<h4 align="center"> Enter the queue ID</h4>	
-	<input type="text" [(ngModel)] = "queue_id"/>	<br>
+		<h4> Enter the queue ID</h4>	
+		<input type="text" [(ngModel)] = "queue_id"/>	<br>
 
-	<h4 align="center"> Enter the initial free slot count</h4>	
-	<input type="text" [(ngModel)] = "initial_free_slots"/>	<br>	
+		<h4> Enter the initial free slot count</h4>	
+		<input type="text" [(ngModel)] = "initial_free_slots"/>	<br>	
 
-	<h4 align="center"> Enter the recurring free slot count</h4>	
-	<input type="text" [(ngModel)] = "recurring_free_slot"/>	<br>	
+		<h4> Enter the recurring free slot count</h4>	
+		<input type="text" [(ngModel)] = "recurring_free_slot"/>	<br>	
 
-	<button type="button" class="btn btn-success" (click)="onClickSet()">Set</button>	<br>
+		<button type="button" class="btn btn-success" (click)="onClickSet()">Set</button>	<br>
 
-	<h4 align="center"> Get the initial free slots and recurring free slot count</h4>
+		<h4> Get the initial free slots and recurring free slot count</h4>
 
-	<button type="button" class="btn btn-success" (click)="onClickGet()">Get</button>	<br>
+		<button type="button" class="btn btn-success" (click)="onClickGet()">Get</button>	<br>
 
-	<label id='set_preference'> </label> <br> <br> <br>
+		<label id='set_preference'> </label> <br> <br> <br>
 
-	<label id='get_preference'>	</label>
+		<label id='get_preference'>	</label>
 
-</body>
+	</body>
+</div>
