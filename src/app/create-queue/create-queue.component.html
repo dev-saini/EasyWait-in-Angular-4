@@ -1,13 +1,15 @@
-<h1 align="center">Create New Queue</h1>
+<div align="center">
+	<h1>Create New Queue</h1>
 
-<body>
+	<body>
 
-	<h4 align="center"> Enter the queue name </h4>
+		<h4> Enter the queue name </h4>
 
-	<input type='text' [(ngModel)] = "queue_name" (keyup.enter)="onKeyUp()"/>	<br>
+		<input type='text' [(ngModel)] = "queue_name" (keyup.enter)="onKeyUp()"/>	<br>
 
-	<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
+		<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
 
-	<label id='queue_id&name'> </label>
+		<label id='queue_id&name'> </label>
 
-</body>
+	</body>
+</div>

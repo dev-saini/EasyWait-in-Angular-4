@@ -18,6 +18,7 @@ import { BookAppointmentComponent } from './book-appointment/book-appointment.co
 import { ReviveAppointmentsComponent } from './revive-appointments/revive-appointments.component';
 import { CancelAppointmentComponent } from './cancel-appointment/cancel-appointment.component';
 import { GetSetPreferencesComponent } from './get-set-preferences/get-set-preferences.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GetSetPreferencesComponent } from './get-set-preferences/get-set-prefer
     BookAppointmentComponent,
     ReviveAppointmentsComponent,
     CancelAppointmentComponent,
-    GetSetPreferencesComponent
+    GetSetPreferencesComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,

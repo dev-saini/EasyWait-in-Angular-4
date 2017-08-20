@@ -1,15 +1,17 @@
-<h1 align="center">Cancel Appointment</h1>
+<div align="center">
+	<h1>Cancel Appointment</h1>
 
-<body>
+	<body>
 
-	<h4 align="center"> Enter the queue ID</h4>	
-	<input type="text" [(ngModel)] = "queue_id"/>	<br>
+		<h4> Enter the queue ID</h4>	
+		<input type="text" [(ngModel)] = "queue_id"/>	<br>
 
-	<h4 align="center"> Enter the position to be cancelled</h4>	
-	<input type="text" [(ngModel)] = "position"/>	<br>
+		<h4> Enter the position to be cancelled</h4>	
+		<input type="text" [(ngModel)] = "position"/>	<br>
 
-	<button type="button" class="btn btn-danger" (click)="onClickBook()">Cancel</button>	<br>
+		<button type="button" class="btn btn-danger" (click)="onClickBook()">Cancel</button>	<br>
 
-	<label id='cancel_status'> </label>
+		<label id='cancel_status'> </label>
 
-</body>
+	</body>
+</div>

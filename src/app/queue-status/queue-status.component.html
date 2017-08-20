@@ -1,13 +1,17 @@
-<h1 align="center">Display Queue Status</h1>
+<div align="center">
 
-<body>
+	<h1>Display Queue Status</h1>
 
-	<h4 align="center"> Enter the queue ID </h4>
+	<body>
 
-	<input type="text" [(ngModel)] = "queue_id" (keyup.enter)="onKeyUp()"/>	<br>
+		<h4> Enter the queue ID </h4>
 
-	<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
+			<input type="text" [(ngModel)] = "queue_id" (keyup.enter)="onKeyUp()"/>	<br>
 
-	<label id = 'queue_status'></label>
+			<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
 
-</body>
+			<label id = 'queue_status'></label>
+
+	</body>
+
+</div>

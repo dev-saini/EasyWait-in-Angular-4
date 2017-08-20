@@ -1,6 +1,5 @@
 input{
 	text-align: center;
-	margin-left: 583px;
     placeholder: "Enter text here";
 }
 
@@ -11,11 +10,9 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 615px;
     margin-top: 10px;
 }
 
 label {
-        margin-left: 583px;
         text-align: center;
 }

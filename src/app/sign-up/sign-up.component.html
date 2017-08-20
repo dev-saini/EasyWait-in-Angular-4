@@ -1,18 +1,20 @@
-<h1 align="center">Sign Up</h1>
+<div align="center">
+	<h1>Sign Up</h1>
 
-<body>
+	<body>
 
-	<h4 align="center"> Enter your name </h4>	
-	<input type="text" [(ngModel)] = "name"/>	<br>
+		<h4> Enter your name </h4>	
+		<input type="text" [(ngModel)] = "name"/>	<br>
 
-	<h4 align="center"> Enter your email id </h4>	
-	<input type="email" [(ngModel)] = "email"/>	<br>
+		<h4> Enter your email id </h4>	
+		<input type="email" [(ngModel)] = "email"/>	<br>
 
-	<h4 align="center"> Enter your password </h4>	
-	<input type="password" [(ngModel)] = "password" (keyup.enter)="onKeyUp()"/>	<br>
+		<h4> Enter your password </h4>	
+		<input type="password" [(ngModel)] = "password" (keyup.enter)="onKeyUp()"/>	<br>
 
-	<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
+		<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
 
-	<label id='display_name_sign_up'> </label>
+		<label id='display_name_sign_up'> </label>
 
-</body>
+	</body>
+</div>
