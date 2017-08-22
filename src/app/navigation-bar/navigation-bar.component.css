@@ -1,13 +1,14 @@
-.navbar{
-	background-color: rgba(0,153,76,0.5);
+.navbar{	/*Transparency of Navbar*/
+	background-color: rgba(0,150,136,0.5);
 	border-bottom: 1px solid #dedede;
 	font-family: 'Alegreya Sans', sans-serif;
 }
 
-.navbar .nav .nav-item .nav-link {
-	color: rgb(101,127,95);
+.navbar .nav .nav-item .nav-link {	/* Color of Navbar Items */
+	/*color: rgb(101,127,95); */
+	color: #333;
 }
 
-.navbar .nav .nav-item .nav-link:hover {
+.navbar .nav .nav-item .nav-link:hover { /* Color change on hovering over the navbar items*/
 	color:rgb(102,255,102);
 }

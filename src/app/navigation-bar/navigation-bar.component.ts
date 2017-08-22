@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
+    isIn = false;   
+
   constructor() { }
 
   ngOnInit() {
   }
 
+    toggleState() { 
+        let bool = this.isIn;
+        this.isIn = bool == false ? true : false; 
+    }
 }
