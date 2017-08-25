@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';	
 import { NgModule } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { QueueStatusComponent } from './queue-status/queue-status.component';
@@ -41,7 +42,13 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+        { 
+          path: 'customers', 
+          component: QueueStatusComponent
+        }
+      ])
   ],
 
   providers: [CookieService],
