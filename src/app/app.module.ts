@@ -47,6 +47,11 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
         { 
           path: 'customers', 
           component: QueueStatusComponent
+        },
+        { 
+          path: '',
+          redirectTo: '/customers',
+          pathMatch: 'full'
         }
       ])
   ],
