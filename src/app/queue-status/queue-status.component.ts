@@ -56,7 +56,7 @@ export class QueueStatusComponent implements OnInit {
   		
   	}); */
 
-    this.displayResult();
+    //this.displayResult();
     this.load_component = true;
   }
 
