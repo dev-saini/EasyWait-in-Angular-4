@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';	
 import { NgModule } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { QueueStatusComponent } from './queue-status/queue-status.component';
@@ -20,6 +20,14 @@ import { ReviveAppointmentsComponent } from './revive-appointments/revive-appoin
 import { CancelAppointmentComponent } from './cancel-appointment/cancel-appointment.component';
 import { GetSetPreferencesComponent } from './get-set-preferences/get-set-preferences.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { DisplayQueueStatusComponent } from './display-queue-status/display-queue-status.component';
+
+const appRoutes : Routes = [
+  { 
+      path: 'customers', 
+      component: QueueStatusComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -37,23 +45,16 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     ReviveAppointmentsComponent,
     CancelAppointmentComponent,
     GetSetPreferencesComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    DisplayQueueStatusComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-        { 
-          path: 'customers', 
-          component: QueueStatusComponent
-        },
-        { 
-          path: '',
-          redirectTo: '/customers',
-          pathMatch: 'full'
-        }
-      ])
+    RouterModule.forRoot(
+        appRoutes
+      )
   ],
 
   providers: [CookieService],

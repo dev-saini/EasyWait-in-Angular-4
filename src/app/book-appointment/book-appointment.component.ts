@@ -10,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class BookAppointmentComponent implements OnInit {
 
-  	private url = 'http://52.24.120.4:8001/api/queue/';
+  	private url = 'http://127.0.0.1:8000/api/queue/';
 	queue_id: string;
 	status: string;
 	reference_name: string;

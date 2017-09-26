@@ -12,7 +12,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class CreateQueueComponent implements OnInit {
 
 	queue_name: string;
-	private url = 'http://52.24.120.4:8001/api/queue';
+	private url = 'http://127.0.0.1:8000/api/queue';
   queue_id: string;
 
   	constructor(private http : HttpClient, private cookieService : CookieService) { }

@@ -11,7 +11,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class QueueCurrentStateComponent implements OnInit {
 
-	private url = 'http://52.24.120.4:8001/api/queue/';
+	private url = 'http://127.0.0.1:8000/api/queue/';
 	queue_id: string;
 	queue_name: any;
 	accepting_appointments: string;

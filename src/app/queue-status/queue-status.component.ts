@@ -12,15 +12,16 @@ export class QueueStatusComponent implements OnInit {
 
 	results: any;
 	queue_position: string;
-	private url = 'http://52.24.120.4:8001/api/queue/';
+	private url = 'http://127.0.0.1:8000/api/queue/';
+  private load_component = false;
 	queue_id: String;
 
-  	onClick(){
+  	onClick() {
 
   		this.handleEvent();
  	}
 
-  	onKeyUp(){
+  	onKeyUp() {
 
   		this.handleEvent();
   	}
@@ -44,7 +45,7 @@ export class QueueStatusComponent implements OnInit {
 
   	getJSON(): any {
 
-  		return this.http.get( this.url + this.queue_id )
+  		/*return this.http.get( this.url + this.queue_id )
   						.subscribe((res: Response) => {
 
   		console.log(res);
@@ -53,14 +54,18 @@ export class QueueStatusComponent implements OnInit {
 
     this.displayResult();
   		
-  	});
+  	}); */
+
+    this.displayResult();
+    this.load_component = true;
   }
 
   displayResult() {
 
-    var label = document.getElementById('queue_status');
+    var label = document.getElementById('queue_pos');
 
-    label.innerHTML = 'Queue Position: ' + this.queue_position;
-  }
+    label.innerHTML = /*'<h3> Queue Position:   </h3>' + this.queue_position;*/
+                       '<h3> Queue ID:   </h3>' + this.queue_id; 
+    }
   
 }

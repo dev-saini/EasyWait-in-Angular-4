@@ -6,21 +6,21 @@
 
 	</button>
 
-	<a class="navbar-brand float-xs-right float-sm-left" href='#'><img class='img-fluid' src='assets/app_icon.png'/></a>
+	<a class="navbar-brand float-xs-right float-sm-left" href='#'><img class='img-fluid' src='app_icon.png'/></a>
 
 	<div class="collapse navbar-toggleable-xs" id="navigation"
 		[ngClass] = "{ 'in' : isIn }">
 	    <ul class="nav navbar-nav float-sm-right">
 	    
 	        <li class="nav-item">
-	            <a class="nav-link" href="#about"  [routerLinkActive]="['active']">ABOUT</a>
+	            <a class="nav-link" href="#about">ABOUT</a>
 	        </li>
 
-	        <li class="nav-item" routerLinkActive="active current">
+	        <li class="nav-item">
 	            <a class="nav-link" routerLink="/customers">CUSTOMERS</a>
 	        </li>
 
-	        <li class="nav-item" routerLinkActive="active current">
+	        <li class="nav-item">
 	            <a class="nav-link" href="#vendors">VENDORS</a>
 	        </li>
 

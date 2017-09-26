@@ -13,7 +13,7 @@ export class SignUpComponent implements OnInit {
 	name: string;
 	email: string;
 	password: string;	
-	private url = 'http://52.24.120.4:8001/api/signup';
+	private url = 'http://127.0.0.1:8000/api/signup';
 	token : string;
   cookieValue = 'UNKNOWN'; 
 
