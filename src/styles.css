@@ -27,10 +27,14 @@ input {
 	font-family: 'Alegreya Sans', sans-serif;
 }
 
-/*body {     
-	background-image: url("http://isabelspoetry.com/wp-content/uploads/2017/07/Background-Color-Isa136.jpg"); 	
+body {     
+	background-image: url('assets/background3.jpg'); 	
 	background-size:100%; 	
-	background-repeat: no-repeat; 	
+	background-repeat: repeat; 	
 	width: 100%; 	
 
+ }
+
+ /*body {
+ 	 background-image: '../assets/background5.jpg';
  }*/

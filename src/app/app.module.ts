@@ -21,6 +21,7 @@ import { CancelAppointmentComponent } from './cancel-appointment/cancel-appointm
 import { GetSetPreferencesComponent } from './get-set-preferences/get-set-preferences.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { DisplayQueueStatusComponent } from './display-queue-status/display-queue-status.component';
+import { AboutWindowComponent } from './about-window/about-window.component';
 
 const appRoutes : Routes = [
   { 
@@ -28,8 +29,18 @@ const appRoutes : Routes = [
       component: QueueStatusComponent
   },
   {
+<<<<<<< HEAD
       path: 'vendor',
       component: CreateQueueComponent
+=======
+      path: 'about',
+      component: AboutWindowComponent
+  },
+  { 
+      path: '',
+      redirectTo: '/customers',
+      pathMatch: 'full'
+>>>>>>> 1a6984661d1619365283502bf18228daebcf4874
   }
 ];
 
@@ -50,7 +61,8 @@ const appRoutes : Routes = [
     CancelAppointmentComponent,
     GetSetPreferencesComponent,
     NavigationBarComponent,
-    DisplayQueueStatusComponent
+    DisplayQueueStatusComponent,
+    AboutWindowComponent
   ],
   imports: [
     BrowserModule,
