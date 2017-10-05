@@ -1,23 +1,28 @@
-<div align="center" id="queue_status">
+<div style="background: null;" align="center" id="queue_status">
 
-	<body>
 
 		<h3 style="color: #546e7a;">Stop Waiting! </h3> 
-		<h3 style="color:  #ffa726;">Search your Queue...</h3>
+		<h3 style="color:  #ffff;">Search your Queue...</h3>
 
 			<div class="form-inline">
 				<input class = "form-control" type="number" [(ngModel)] = "queue_id" placeholder="Queue ID" (keyup.enter)="onKeyUp()">
 
 				<button type="submit" class="btn btn-success" (click)="onClick()">Search</button>	<br> <br> <br> <br>
-				<div *ngIf = 'load_component'>
-					<app-display-queue-status></app-display-queue-status>
+				<div *ngIf = 'load_component' align="center">
+					<app-display-queue-status 
+					[queue_position] = 'queue_position' 
+					[queue_id] = 'queue_id' 
+					[accepting_appointments] = 'accepting_appointments' 
+					[appointments] = 'appointments'
+					[appointments_flag] = 'appointments_flag'>
+						
+					</app-display-queue-status>
 				</div>
 
 			</div>
 
 			<label id = 'queue_pos'></label>
 
-	</body>
 
 </div> 
 

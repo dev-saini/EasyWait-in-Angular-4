@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Response } from '@angular/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-queue-status',
@@ -11,10 +12,19 @@ import { Response } from '@angular/http';
 export class QueueStatusComponent implements OnInit {
 
 	results: any;
-	queue_position: string;
+  queue_position: string;
 	private url = 'http://127.0.0.1:8000/api/queue/';
   private load_component = false;
+  accepting_appointments = 0;
+  appointments_flag = 0;
 	queue_id: String;
+  appointments: any;
+
+    constructor(private http: HttpClient, private cookieService : CookieService) { }
+
+    ngOnInit(): void {
+
+    }
 
   	onClick() {
 
@@ -28,44 +38,90 @@ export class QueueStatusComponent implements OnInit {
 
   	handleEvent() {
 
-  		if(this.queue_id != null){
+  		if(this.queue_id != null) {
+
   			console.log(this.queue_id);
-  			this.getJSON();
+
+  			this.getQueueStatus();
+
+        this.getAppointments();
+
+        this.load_component = true;
+
   		} else {
-  			console.log('No entry found');
+
+  			alert('No entry found');
+
   		}	
 
   	}
 
-  	constructor(private http: HttpClient) { }
+  	getQueueStatus() {
 
-  	ngOnInit(): void {
-
-  	}
-
-  	getJSON(): any {
-
-  		/*return this.http.get( this.url + this.queue_id )
+  		return this.http.get( this.url + this.queue_id )
   						.subscribe((res: Response) => {
 
   		console.log(res);
 
+    this.queue_id = res['id'];
 		this.queue_position = res['position'];
-
-    this.displayResult();
-  		
-  	}); */
+    this.accepting_appointments = res['accepting_appointments'];
 
     //this.displayResult();
-    this.load_component = true;
+  		
+  	}, (error: Response) => {
+
+        if(error.status == 401)
+          alert('Queue not found');
+      }); 
   }
 
-  displayResult() {
+  getAppointments() {
+
+    this.http.get(this.url + this.queue_id + '/appointment', {
+
+              headers: new HttpHeaders()
+              .set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
+
+            })
+        .subscribe((response: Response) => {
+
+          if(response == null) {
+              this.appointments_flag = 1;
+          } else {
+            this.appointments_flag = 0;
+          }
+
+          console.log(response);
+          
+          this.appointments = response['appointments'];
+
+          //this.displayResult();
+
+          }, (error: Response) => {
+
+            if(error.status == 401)
+
+              alert('Please Log-In to continue');
+
+            else if(error.status == 404)
+
+              alert('Requested Queue could not be found');
+
+            else if(error.status == 403)
+
+              alert('Appointments Closed');
+
+          });
+
+    }  
+
+  /*displayResult() {
 
     var label = document.getElementById('queue_pos');
 
-    label.innerHTML = /*'<h3> Queue Position:   </h3>' + this.queue_position;*/
-                       '<h3> Queue ID:   </h3>' + this.queue_id; 
-    }
+    label.innerHTML = '<h3> Queue Position:   </h3>' + this.queue_position;
+                       //'<h3> Queue ID:   </h3>' + this.queue_id; 
+    }*/
   
 }

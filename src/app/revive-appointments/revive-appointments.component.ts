@@ -37,9 +37,11 @@ export class ReviveAppointmentsComponent implements OnInit {
 				.subscribe((response: Response) => {
 
 					console.log(response);
-					/*this.appointments = response['appointments'];
-					this.status = this.appointments[0];
-					this.name = this.status['reference'];*/
+					
+					this.appointments = response['appointments'];
+
+					// this.status = this.appointments[0];
+					// this.name = this.status['reference'];
 
 					this.displayResult();
 

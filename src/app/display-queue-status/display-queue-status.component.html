@@ -2,25 +2,59 @@
 	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 
 	</div>
-	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="background-color:pink;">
 
-	     <!--  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	      proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p> -->
+	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="background-color:rgba(0,150,136,0.5);">
 
-	      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:pink;">
-	      		<p> Column 1 </p>
+		  	<!-- Column 1 -->		
+	      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+	      		<img src="../assets/rsz_details.png" style="margin-top: 40px">
+
 	      </div>
 
-	      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:pink;">
-	      		<p> Column 2 </p>
+	        <!-- Column 2 -->
+	      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center">
+
+	      		<h3 style="margin-top: 20px;"> 
+
+	      			Queue ID: {{this.queue_id}} 
+
+	      		</h3>
+
+	      		<h3 style="margin-top: 20px;"> 
+
+	      			Queue Position: {{this.queue_position}} 
+
+	      		</h3>
+
+	      		<h4 *ngIf = 'accepting_appointments' style="margin-top: 20px;">
+
+	      			Book an appointment
+
+  					<button class = "btn btn-success" (click)="onClick()">Book</button>	<br>
+
+	      		</h4>
 	      </div>
 
-	      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:pink;">
-	      		<p> Column 3 </p>
+	      <!-- Column 3 -->
+	      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+	      		<div *ngIf = 'appointments_flag; else elseBlock'>
+		      		<h5 style="margin-top: 70px">
+		      			No appointments available
+		      		</h5>	
+	      		</div>	
+
+      			<ng-template #elseBlock>
+	      	 	<ul> 
+					<li *ngFor = 'let details of appointments'>
+
+						<h5> {{details.reference}} : {{details.position}} </h5>
+
+					</li> 
+				</ul>
+				</ng-template>
+
 	      </div>
 
     </div>
