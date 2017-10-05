@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
@@ -13,7 +13,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class MoveToNextPositionComponent implements OnInit {
 
 	queue_id: string;
-	private url = 'http://127.0.0.1:8000/api/queue/';
+	private url = 'http://ewapi.krishna-seva.net/api/queue/';
 	position: string;
 	name: string;
 

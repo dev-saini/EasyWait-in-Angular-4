@@ -13,6 +13,12 @@ button {
     margin-top: 10px;
 }
 
-label {
-        text-align: center;
+a {
+    text-align: left;
+}
+
+#create_queue {
+
+    margin-top: 80px;
+
 }

@@ -12,7 +12,7 @@ export class QueueStatusComponent implements OnInit {
 
 	results: any;
 	queue_position: string;
-	private url = 'http://127.0.0.1:8000/api/queue/';
+	private url = 'http://ewapi.krishna-seva.net/api/queue/';
   private load_component = false;
 	queue_id: String;
 

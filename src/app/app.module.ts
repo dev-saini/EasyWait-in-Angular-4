@@ -26,6 +26,10 @@ const appRoutes : Routes = [
   { 
       path: 'customers', 
       component: QueueStatusComponent
+  },
+  {
+      path: 'vendor',
+      component: CreateQueueComponent
   }
 ];
 

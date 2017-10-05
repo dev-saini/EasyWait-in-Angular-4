@@ -14,7 +14,7 @@ export class SignInComponent implements OnInit {
 	email: string;
 	password: string;
 	token: string;
-	private url = 'http://127.0.0.1:8000/api/signin';
+	private url = 'http://ewapi.krishna-seva.net/api/signin';
   cookieValue = 'UNKNOWN'; 
 
   	constructor(private http: HttpClient, private cookieService : CookieService) { }

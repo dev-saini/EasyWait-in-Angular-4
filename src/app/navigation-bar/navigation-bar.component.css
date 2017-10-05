@@ -6,9 +6,15 @@
 
 .navbar .nav .nav-item .nav-link {	/* Color of Navbar Items */
 	/*color: rgb(101,127,95); */
-	color: #333;
+	color: #000;
 }
 
 .navbar .nav .nav-item .nav-link:hover { /* Color change on hovering over the navbar items*/
-	color:rgb(102,255,102);
+	color:rgb(255,167,38);
+}
+
+a{
+	margin-left: 30px;
+	margin-right: 30px;
+	font-size: 23px;
 }

@@ -10,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class CancelAppointmentComponent implements OnInit {
 
-  private url = 'http://127.0.0.1:8000/api/queue/';
+  private url = 'http://ewapi.krishna-seva.net/api/queue/';
 	queue_id: string;
 	status: string;
 	position: string;

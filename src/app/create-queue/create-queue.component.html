@@ -1,15 +1,65 @@
-<div align="center">
-	<h1>Create New Queue</h1>
+<div align="center" id="create_queue" class="row">
+	<!-- <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+	</div> -->
+	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+	      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		      		
+			<h3 style="color: #546e7a">Add a New Queue</h3>
+
+			<br>
+
+				<div class="form-inline">
+					<input class = "form-control" [(ngModel)] = "queue_name" placeholder="Name your Queue" (keyup.enter)="onKeyUp()">
+
+				</div>
+
+			<button type="button" class="btn btn-success" (click)="onClick()">Add</button><br><br><br><br>
+		
+	      </div>
+
+	      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+			<div id="q_list">
+				<a style="width: 40%" id="q_list" href="#" class="list-group-item list-group-item-action list-group-item-success" *ngFor = 'let queuedetail of queuelist'>
+
+					{{queuedetail.id}}: {{queuedetail.name}}
+
+				</a>
+			</div>
+			
+	      </div>
+
+    </div>
+
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+    </div>
+
+
+</div>
+<!-- 
+<div align="center" id="create_queue">
 
 	<body>
 
-		<h4> Enter the queue name </h4>
+		<h3 style="color: #546e7a">Add a New Queue</h3>
 
-		<input type='text' [(ngModel)] = "queue_name" (keyup.enter)="onKeyUp()"/>	<br>
+			<div class="form-inline">
+				<input class = "form-control" [(ngModel)] = "queue_name" placeholder="Name your Queue" (keyup.enter)="onKeyUp()">				
+			</div>
 
-		<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
+		<button type="button" class="btn btn-success" (click)="onClick()">Add</button><br><br><br><br>
+	
+		<div id="q_list">
+			<a style="width: 40%" id="q_list" href="#" class="list-group-item list-group-item-action list-group-item-success" *ngFor = 'let queuedetail of queuelist'>
 
-		<label id='queue_id&name'> </label>
+				{{queuedetail.id}}: {{queuedetail.name}}
+
+			</a>
+		</div>
 
 	</body>
-</div>
+
+</div> -->
