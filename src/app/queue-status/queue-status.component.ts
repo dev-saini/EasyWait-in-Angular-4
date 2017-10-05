@@ -12,13 +12,10 @@ import { CookieService } from 'ngx-cookie-service';
 export class QueueStatusComponent implements OnInit {
 
 	results: any;
-<<<<<<< HEAD
+
 	queue_position: string;
 	private url = 'http://ewapi.krishna-seva.net/api/queue/';
-=======
-  queue_position: string;
-	private url = 'http://127.0.0.1:8000/api/queue/';
->>>>>>> 1a6984661d1619365283502bf18228daebcf4874
+
   private load_component = false;
   accepting_appointments = 0;
   appointments_flag = 0;

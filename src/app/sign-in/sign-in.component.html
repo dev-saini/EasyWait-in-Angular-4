@@ -1,17 +1,15 @@
 <div align="center">
+
 	<h1>Sign In</h1>
 
-	<body>
+	<h4> Enter your email id </h4>	
+	<input type="email" [(ngModel)] = "email"/>	<br>
 
-		<h4> Enter your email id </h4>	
-		<input type="email" [(ngModel)] = "email"/>	<br>
+	<h4> Enter your password </h4>	
+	<input type="password" [(ngModel)] = "password" (keyup.enter)="onKeyUp()"/>	<br>
 
-		<h4> Enter your password </h4>	
-		<input type="password" [(ngModel)] = "password" (keyup.enter)="onKeyUp()"/>	<br>
+	<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
 
-		<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
+	<label id='display_name_sign_in'> </label>
 
-		<label id='display_name_sign_in'> </label>
-
-	</body>
 </div>

@@ -29,10 +29,10 @@ const appRoutes : Routes = [
       component: QueueStatusComponent
   },
   {
-<<<<<<< HEAD
       path: 'vendor',
       component: CreateQueueComponent
-=======
+  },
+  {
       path: 'about',
       component: AboutWindowComponent
   },
@@ -40,7 +40,10 @@ const appRoutes : Routes = [
       path: '',
       redirectTo: '/customers',
       pathMatch: 'full'
->>>>>>> 1a6984661d1619365283502bf18228daebcf4874
+  },
+  {
+      path: 'profile',
+      component: SignUpComponent
   }
 ];
 

@@ -1,20 +1,44 @@
-<div align="center">
-	<h1>Sign Up</h1>
+<div class="row">
+	
+	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 
-	<body>
+	</div>
 
-		<h4> Enter your name </h4>	
-		<input type="text" [(ngModel)] = "name"/>	<br>
+	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
-		<h4> Enter your email id </h4>	
-		<input type="email" [(ngModel)] = "email"/>	<br>
+		<div align="center" style="margin-top: 150px">
 
-		<h4> Enter your password </h4>	
-		<input type="password" [(ngModel)] = "password" (keyup.enter)="onKeyUp()"/>	<br>
+			<h1>Sign Up</h1>
 
-		<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
+			<h4> Enter your name </h4>	
+			<input type="text" [(ngModel)] = "name"/>	<br>
 
-		<label id='display_name_sign_up'> </label>
+			<h4> Enter your email id </h4>	
+			<input type="email" [(ngModel)] = "email"/>	<br>
 
-	</body>
+			<h4> Enter your password </h4>	
+			<input type="password" [(ngModel)] = "password" (keyup.enter)="onKeyUp()"/>	<br>
+
+			<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
+
+			<label id='display_name_sign_up'> </label>
+
+		</div>
+
+	</div>
+
+	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+		<div style="margin-top: 150px">
+			
+			<app-sign-in></app-sign-in>
+
+		</div>
+
+	</div>
+
+	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+	</div>
+
 </div>

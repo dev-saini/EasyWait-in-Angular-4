@@ -4,10 +4,6 @@
 		<h3 style="color: #546e7a;">Stop Waiting! </h3> 
 		<h3 style="color:  #ffff;">Search your Queue...</h3>
 
-<<<<<<< HEAD
-		<div class="form-inline">
-			<input class = "form-control" type="number" [(ngModel)] = "queue_id" placeholder="Queue ID" (keyup.enter)="onKeyUp()">
-=======
 			<div class="form-inline">
 				<input class = "form-control" type="number" [(ngModel)] = "queue_id" placeholder="Queue ID" (keyup.enter)="onKeyUp()">
 
@@ -22,17 +18,10 @@
 						
 					</app-display-queue-status>
 				</div>
->>>>>>> 1a6984661d1619365283502bf18228daebcf4874
 
-			<button type="submit" class="btn btn-success" (click)="onClick()">Search</button>	<br> <br> <br> <br>
-			
-			<div *ngIf = 'load_component'>
-				<app-display-queue-status></app-display-queue-status>
 			</div>
 
-		</div>
-
-		<label id = 'queue_pos'></label>
+			<label id = 'queue_pos'></label>
 
 
 </div> 
