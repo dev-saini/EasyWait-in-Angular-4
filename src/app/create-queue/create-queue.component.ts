@@ -4,6 +4,8 @@ import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpHeaders } from '@angular/common/http';
 
+import * as myGlobals from '../globals';
+
 @Component({
   selector: 'app-create-queue',
   templateUrl: './create-queue.component.html',
@@ -21,7 +23,7 @@ export class CreateQueueComponent implements OnInit {
 
   	ngOnInit() {
 
-      this.fetchQueueList();
+      //this.fetchQueueList();
 
   	}
 

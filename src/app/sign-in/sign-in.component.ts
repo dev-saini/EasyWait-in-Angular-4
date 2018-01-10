@@ -3,18 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
 
+import * as myGlobals from '../globals';
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })
+
 export class SignInComponent implements OnInit {
 
   name: string;
 	email: string;
 	password: string;
 	token: string;
-	private url = 'http://ewapi.krishna-seva.net/api/signin';
+	private url = myGlobals.url + 'api/signin';
   cookieValue = 'UNKNOWN'; 
 
   	constructor(private http: HttpClient, private cookieService : CookieService) { }

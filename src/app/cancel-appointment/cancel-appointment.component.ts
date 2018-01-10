@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
 
+import * as myGlobals from '../globals';
+
 @Component({
   selector: 'app-cancel-appointment',
   templateUrl: './cancel-appointment.component.html',
@@ -10,7 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class CancelAppointmentComponent implements OnInit {
 
-  private url = 'http://ewapi.krishna-seva.net/api/queue/';
+  private url = myGlobals.url + 'api/queue/';
 	queue_id: string;
 	status: string;
 	position: string;

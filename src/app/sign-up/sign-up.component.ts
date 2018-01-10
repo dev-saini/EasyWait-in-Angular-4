@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
 
+import * as myGlobals from '../globals';
+
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -13,7 +16,7 @@ export class SignUpComponent implements OnInit {
 	name: string;
 	email: string;
 	password: string;	
-	private url = 'http://ewapi.krishna-seva.net/api/signup';
+	private url = myGlobals.url  + 'api/signup';
 	token : string;
   cookieValue = 'UNKNOWN'; 
 

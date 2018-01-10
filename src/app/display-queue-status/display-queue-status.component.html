@@ -46,13 +46,17 @@
 	      		</div>	
 
       			<ng-template #elseBlock>
-	      	 	<ul> 
+	      	 	<div id='container'>
+	      	 		<nav>
+	      	 		<ul> 
 					<li *ngFor = 'let details of appointments'>
 
 						<h5> {{details.reference}} : {{details.position}} </h5>
 
 					</li> 
 				</ul>
+				</nav>
+				</div>
 				</ng-template>
 
 	      </div>

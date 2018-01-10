@@ -5,7 +5,7 @@
 		<h3 style="color:  #ffff;">Search your Queue...</h3>
 
 			<div class="form-inline">
-				<input class = "form-control" type="number" [(ngModel)] = "queue_id" placeholder="Queue ID" (keyup.enter)="onKeyUp()">
+				<input class = "form-control" type="number" [(ngModel)] = "queue_id" placeholder="Queue ID" (keyup.enter)="onClick()">
 
 				<button type="submit" class="btn btn-success" (click)="onClick()">Search</button>	<br> <br> <br> <br>
 				<div *ngIf = 'load_component' align="center">

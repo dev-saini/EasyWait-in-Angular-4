@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
+
+import * as myGlobals from '../globals';
 
 @Component({
   selector: 'app-revive-appointments',
@@ -10,11 +12,15 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ReviveAppointmentsComponent implements OnInit {
 
-  private url = 'http://ewapi.krishna-seva.net/api/queue/';
+  private url = myGlobals.url + 'api/queue/';
 	queue_id: string;
 	status: string;
 	appointments: string;
 	name: string;
+
+	@Input() appointments_flag: any;
+	@Input() load_component: true;
+	@Input() logged_in: any;
 
 
   	constructor(private http : HttpClient, private cookieService : CookieService) { }
@@ -36,6 +42,13 @@ export class ReviveAppointmentsComponent implements OnInit {
 		        })
 				.subscribe((response: Response) => {
 
+					if(response == null) {
+              			this.appointments_flag = 1;
+          			} else {
+            			this.appointments_flag = 0;
+          }
+
+          			this.load_component = true;	
 					console.log(response);
 					
 					this.appointments = response['appointments'];
@@ -43,16 +56,31 @@ export class ReviveAppointmentsComponent implements OnInit {
 					// this.status = this.appointments[0];
 					// this.name = this.status['reference'];
 
-					this.displayResult();
+					//this.displayResult();
 
 		  		}, (error: Response) => {
 
-		        if(error.status == 401)
-		          alert('Please Log-In to continue');
-		      	else if(error.status == 404)
-		      		alert('Requested Queue could not be found');
-		      	else if(error.status == 403)
-		      		alert('Appointments Closed');
+		       console.log(error.status);
+
+            if(error.status == 401) {
+
+              alert('Please Log-In to continue');
+
+              this.logged_in = false;
+
+            }
+
+            else if(error.status == 404)
+
+              alert('Requested Queue could not be found');
+
+            else if(error.status == 403)
+
+              alert('Appointments Closed');
+
+            else
+
+              this.logged_in = true;
 
 		      });
 

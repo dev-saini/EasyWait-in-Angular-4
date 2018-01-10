@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
+
+import { ReviveAppointmentsComponent } from '../revive-appointments/revive-appointments.component';
+
+import * as myGlobals from '../globals';
 
 @Component({
   selector: 'app-queue-status',
@@ -14,18 +18,23 @@ export class QueueStatusComponent implements OnInit {
 	results: any;
 
 	queue_position: string;
-	private url = 'http://ewapi.krishna-seva.net/api/queue/';
+	private url = myGlobals.url + 'api/queue/';
 
   private load_component = false;
   accepting_appointments = 0;
   appointments_flag = 0;
 	queue_id: String;
+  logged_in: boolean;
   appointments: any;
 
     constructor(private http: HttpClient, private cookieService : CookieService) { }
 
     ngOnInit(): void {
+      
+    }
 
+    ngOnChanges() {
+          
     }
 
   	onClick() {
@@ -33,12 +42,9 @@ export class QueueStatusComponent implements OnInit {
   		this.handleEvent();
  	}
 
-  	onKeyUp() {
-
-  		this.handleEvent();
-  	}
-
   	handleEvent() {
+
+      let retrieveappointments = new ReviveAppointmentsComponent(this.http, this.cookieService);
 
   		if(this.queue_id != null) {
 
@@ -47,8 +53,9 @@ export class QueueStatusComponent implements OnInit {
   			this.getQueueStatus();
 
         this.getAppointments();
+        //retrieveappointments.onClick();
 
-        this.load_component = true;
+        //this.load_component = true;
 
   		} else {
 
@@ -94,6 +101,7 @@ export class QueueStatusComponent implements OnInit {
             this.appointments_flag = 0;
           }
 
+          this.load_component = true;
           console.log(response);
           
           this.appointments = response['appointments'];
@@ -102,9 +110,15 @@ export class QueueStatusComponent implements OnInit {
 
           }, (error: Response) => {
 
-            if(error.status == 401)
+            console.log(error.status);
+
+            if(error.status == 401) {
 
               alert('Please Log-In to continue');
+
+              this.logged_in = false;
+
+            }
 
             else if(error.status == 404)
 
@@ -113,6 +127,10 @@ export class QueueStatusComponent implements OnInit {
             else if(error.status == 403)
 
               alert('Appointments Closed');
+
+            else
+
+              this.logged_in = true;
 
           });
 
