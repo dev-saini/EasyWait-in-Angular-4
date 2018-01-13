@@ -10,11 +10,14 @@
 				<button type="submit" class="btn btn-success" (click)="onClick()">Search</button>	<br> <br> <br> <br>
 				<div *ngIf = 'load_component' align="center">
 					<app-display-queue-status 
+					
 					[queue_position] = 'queue_position' 
 					[queue_id] = 'queue_id' 
 					[accepting_appointments] = 'accepting_appointments' 
 					[appointments] = 'appointments'
-					[appointments_flag] = 'appointments_flag'>
+					[appointments_flag] = 'appointments_flag'
+
+					>
 						
 					</app-display-queue-status>
 				</div>

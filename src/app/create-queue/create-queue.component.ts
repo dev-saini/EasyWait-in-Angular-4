@@ -11,6 +11,7 @@ import * as myGlobals from '../globals';
   templateUrl: './create-queue.component.html',
   styleUrls: ['./create-queue.component.css']
 })
+
 export class CreateQueueComponent implements OnInit {
 
 	private url = 'http://ewapi.krishna-seva.net/api/queue';
@@ -19,50 +20,55 @@ export class CreateQueueComponent implements OnInit {
   queue_id: string;
   queuelist: string;
 
-  	constructor(private http : HttpClient, private cookieService : CookieService) { }
+  constructor(private http : HttpClient, private cookieService : CookieService) { }
 
-  	ngOnInit() {
+  ngOnInit() {
 
-      //this.fetchQueueList();
+  //this.fetchQueueList();
 
-  	}
+  }
 
-    fetchQueueList() {
+  fetchQueueList() {
 
-      this.http.get(this.url, {
+    this.http.get(this.url, {
 
-          headers: new HttpHeaders()
-          .set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
+    headers: new HttpHeaders().set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
 
-        })
-      .subscribe( (response: Response) => {
+    }).subscribe( (response: Response) => {
 
-        if(response['error'] == false) {
+      if(response['error'] == false) {
 
-          console.log(response);
-          this.queuelist = response['queues'];
+        console.log(response);
+            
+        this.queuelist = response['queues'];
+            
+      } else {
+
+        console.log(response['message']);
+            
+        alert(response['message']);
+
+      }
+
+    }, (error: Response) => {
+
+      if(error.status == 401) {
+        
+        alert('Please Login-in to continue.');
           
-        } else {
+      } else if(error.status == 204) {
+              
+        alert('You have created no queues.');
+          
+      } else {
+            
+        alert('An unexpected error occurred.')
+          
+      }
 
-          console.log(response['message']);
-          alert(response['message']);
+    })  
 
-        }
-
-
-      }, (error: Response) => {
-
-          if(error.status == 401) {
-             alert('Please Login-in to continue.');
-          } else if(error.status == 204) {
-              alert('You have created no queues.');
-          } else {
-            alert('An unexpected error occurred.')
-          }
-
-        })  
-
-    }
+}
 
   	onKeyUp() {
   		this.getJSON();

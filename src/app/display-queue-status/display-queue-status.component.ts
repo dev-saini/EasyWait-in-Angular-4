@@ -61,38 +61,41 @@ export class DisplayQueueStatusComponent implements OnInit {
 
   bookAppointment() {
 
-          let post = {action:  'book',reference: this.reference_name};
+    let post = {action:  'book',reference: this.reference_name};
 
+    this.http.post(this.url + this.queue_id + '/appointment', post, {
 
+    headers: new HttpHeaders().set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
 
-         this.http.post(this.url + this.queue_id + '/appointment', post, {
+    }) .subscribe((response: Response) => {
 
-              headers: new HttpHeaders()
-              .set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
-
-            })
-        .subscribe((response: Response) => {
-
-              if(response['error'] == false)
-                this.status = 'Your appointment has been booked, ' + this.reference_name + '!';
-              else
-                this.status = 'Bookings Closed for this queue';
-
-              console.log(this.status);
-
-
+    if(response['error'] == false)
                 
+        this.status = 'Your appointment has been booked, ' + this.reference_name + '!';
+              
+    else
+        
+        this.status = 'Bookings Closed for this queue';
+
+    console.log(this.status);
+              
+    alert(this.status);
+
+    }, (error: Response) => {
+
+    if(error.status == 401)
+            
+        alert('Please Log-In to continue');
+         
+    else if(error.status == 404)
                   
-          }, (error: Response) => {
+        alert('Requested Queue could not be found');
+                
+    else if(error.status == 403)
+           
+        alert('Appointments CLosed');
 
-                if(error.status == 401)
-                  alert('Please Log-In to continue');
-                else if(error.status == 404)
-                  alert('Requested Queue could not be found');
-                else if(error.status == 403)
-                  alert('Appointments CLosed');
-
-          });
+    });
 
   }
 

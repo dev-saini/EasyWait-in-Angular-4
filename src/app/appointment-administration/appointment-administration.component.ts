@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
-import * as myGlobals from 'globals';
+import * as myGlobals from '../globals';
 
 @Component({
   selector: 'app-appointment-administration',
@@ -46,62 +46,69 @@ export class AppointmentAdministrationComponent implements OnInit {
 				          headers: new HttpHeaders()
 				          .set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
 
-				        })
-  					.subscribe((response: Response) => {
+				        }) .subscribe((response: Response) => {
 
-				        	if(response['accepting_appointments'] == 1)
-				        		this.status = 'Appointments Open';
+				        if(response['accepting_appointments'] == 1)
+				        		
+                    this.status = 'Appointments Open';
 
-				        	this.displayResult();
+				        this.displayResult();
 
-				  		}, (error: Response) => {
+				  		  }, (error: Response) => {
 
 				        if(error.status == 404)
-				          alert('Requested Queue could not be found.');
+				          
+                  alert('Requested Queue could not be found.');
 
-				      });
-  						break;
+				        });
+  						  
+                break;
 
   			case 2: this.http.post(this.url + this.queue_id + '/appointment', action_2, {
 
 				          headers: new HttpHeaders()
 				          .set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
 
-				        })
-  					.subscribe((response: Response) => {
+				        }) .subscribe((response: Response) => {
 
-				        	if(response['accepting_appointments'] == 0)
-				        		this.status = 'Appointments Closed';
+				        if(response['accepting_appointments'] == 0)
+				        	
+                  	this.status = 'Appointments Closed';
 
-				        	this.displayResult();
+				        this.displayResult();
 
-				  		}, (error: Response) => {
+				  		  }, (error: Response) => {
 
 				        if(error.status == 404)
-				          alert('Requested Queue could not be found.');
+				          
+                  alert('Requested Queue could not be found.');
 				        
-
-				      });
-  						break;
-  			case 3: this.http.post(this.url + this.queue_id + '/appointment', action_3, {
+				        });
+  						  
+                break;
+  			
+        case 3: this.http.post(this.url + this.queue_id + '/appointment', action_3, {
 
 				          headers: new HttpHeaders()
 				          .set('Authorization', 'Bearer ' + this.cookieService.get('sign_up_token'))
 
-				        })
-  					.subscribe((response: Response) => {
+				        }) .subscribe((response: Response) => {
 
-				        	console.log(response);
+				        console.log(response);
 
-				  		}, (error: Response) => {
+				  		  }, (error: Response) => {
 
 				        if(error.status == 401)
-				          alert('The user already exists.');
-				        else
-				          alert('An unexpected error occured.');
+				          
+                  alert('The user already exists.');
+				        
+                else
+				          
+                  alert('An unexpected error occured.');
 
-				      });
-  						break;
+				        });
+  						
+                break;
 
   		}
 
