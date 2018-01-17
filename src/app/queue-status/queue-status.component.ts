@@ -22,15 +22,14 @@ export class QueueStatusComponent implements OnInit {
 
   private load_component = false;
   accepting_appointments = 0;
-  appointments_flag = 0;
 	queue_id: String;
   logged_in: boolean;
-  appointments: any;
+  queue_name: string;
 
     constructor(private http: HttpClient, private cookieService : CookieService) { }
 
     ngOnInit(): void {
-      
+
     }
 
     ngOnChanges() {
@@ -52,10 +51,7 @@ export class QueueStatusComponent implements OnInit {
 
   			this.getQueueStatus();
 
-        this.getAppointments();
         //retrieveappointments.onClick();
-
-        //this.load_component = true;
 
   		} else {
 
@@ -75,6 +71,9 @@ export class QueueStatusComponent implements OnInit {
     this.queue_id = res['id'];
 		this.queue_position = res['position'];
     this.accepting_appointments = res['accepting_appointments'];
+    this.queue_name = res['name'];
+
+       this.load_component = true;
 
     //this.displayResult();
   		
@@ -85,7 +84,7 @@ export class QueueStatusComponent implements OnInit {
       }); 
   }
 
-  getAppointments() {
+  /*getAppointments() {
 
     this.http.get(this.url + this.queue_id + '/appointment', {
 
@@ -134,7 +133,7 @@ export class QueueStatusComponent implements OnInit {
 
           });
 
-    }  
+    }  */
 
   /*displayResult() {
 
