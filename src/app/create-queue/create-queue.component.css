@@ -1,24 +1,4 @@
-input{
-	text-align: center;
-    placeholder: "Enter text here";
-}
-
-button {
-    border: none;
-    padding: 10px 22px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-/*a {
-    text-align: left;
-}
-*/
-#create_queue {
-
-    margin-top: 130px;
-
+.list {
+    color: black;
+    line-height: 400%;
 }

@@ -72,10 +72,10 @@ export class SignUpComponent implements OnInit {
     }
 
     displayName() {
+        var label;
 
-      var label = document.getElementById('display_name_sign_up');
-
-      label.innerHTML = 'Welcome, ' + this.name + '!';
+        label = document.getElementById('registered');
+        label.innerHTML = 'Account Created!';
     }
 
 }

@@ -23,9 +23,7 @@ export class CreateQueueComponent implements OnInit {
   constructor(private http : HttpClient, private cookieService : CookieService) { }
 
   ngOnInit() {
-
-  //this.fetchQueueList();
-
+    this.fetchQueueList();
   }
 
   fetchQueueList() {

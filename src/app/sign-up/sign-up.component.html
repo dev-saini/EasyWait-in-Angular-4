@@ -1,44 +1,64 @@
 <div class="row">
-	
-	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    <br><br><br>
 
-	</div>
+    <div class="row">
+        <div class="col s12 m4 l2"></div>
 
-	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="col s12 m4 l8">
+            <div class="chip hoverable amber">Sign Up</div>
+            <div class="chip hoverable amber">Help</div>
+            <div class="chip hoverable amber">Customer</div>
+            <div class="chip hoverable amber">Vendor</div>
+            <div class="chip hoverable amber">Sign In</div>
+        </div>
+    </div>
 
-		<div align="center" style="margin-top: 150px">
+    <app-sign-in></app-sign-in>
 
-			<h1>Sign Up</h1>
+    <div class="row">
+        <div class="col s12 m4 l2"></div>
 
-			<h4> Enter your name </h4>	
-			<input type="text" [(ngModel)] = "name"/>	<br>
+        <div class="col s12 m4 l8">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card hoverable">
+                        <div class="card-content black-text center-align">
+                            <span class="card-title">Register</span>
 
-			<h4> Enter your email id </h4>	
-			<input type="email" [(ngModel)] = "email"/>	<br>
+                            <div class="input-field col s12 hoverable">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input type="text" [(ngModel)]="name" placeholder="Username" /> <br>
+                            </div>
 
-			<h4> Enter your password </h4>	
-			<input type="password" [(ngModel)] = "password" (keyup.enter)="onKeyUp()"/>	<br>
+                            <br><br>
 
-			<button type="button" class="btn btn-success" (click)="onClick()">Submit</button>	<br>
+                            <div class="input-field col s12 hoverable">
+                                <i class="material-icons prefix">email</i>
+                                <input type="email" [(ngModel)]="email" placeholder="Email ID" /> <br>
+                            </div>
 
-			<label id='display_name_sign_up'> </label>
+                            <br><br><br>
 
-		</div>
+                            <div class="input-field col s12 hoverable">
+                                <i class="material-icons prefix">security</i>
+                                <input type="password" [(ngModel)]="password" (keyup.enter)="onKeyUp()" placeholder="Password" /> <br>
+                            </div>
 
-	</div>
+                            <br><br><br><br><br><br>
+                        </div>
+                        <div class="card-action right-align">
+                            <button type="button" class="btn btn-success hoverable" id="registered" (click)="onClick()">Submit</button> <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="col s12 m4 l2"></div>
+    </div>
 
-		<div style="margin-top: 150px">
-			
-			<app-sign-in></app-sign-in>
+    <br><br><br>
 
-		</div>
-
-	</div>
-
-	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-
-	</div>
-
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    </div>
 </div>
