@@ -44,7 +44,7 @@ export class QueueStatusComponent implements OnInit {
 
   	handleEvent() {
 
-      let retrieveappointments = new ReviveAppointmentsComponent(this.http, this.cookieService);
+      //let retrieveappointments = new ReviveAppointmentsComponent(this.http, this.cookieService);
 
   		if(this.queue_id != null) {
 
@@ -85,7 +85,7 @@ export class QueueStatusComponent implements OnInit {
       }); 
   }
 
-  getAppointments() {
+ /* getAppointments() {
 
     this.http.get(this.url + this.queue_id + '/appointment', {
 
@@ -134,7 +134,15 @@ export class QueueStatusComponent implements OnInit {
 
           });
 
-    }  
+    }  */
+
+    getAppointments() {
+
+      let retrieve_appointments = new ReviveAppointmentsComponent(this.http,this.cookieService);
+
+      retrieve_appointments.getJSON();
+      
+    }
 
   /*displayResult() {
 
