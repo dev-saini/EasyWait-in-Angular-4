@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
 
-import * as myGlobals from '../globals';
+// import * as myGlobals from '../globals';
 
 @Component({
   selector: 'app-sign-in',
@@ -17,7 +17,9 @@ export class SignInComponent implements OnInit {
 	email: string;
 	password: string;
 	token: string;
-	private url = myGlobals.url + 'api/signin';
+
+    private url = 'http://ewapi.krishna-seva.net/api/signin';
+	// private url = myGlobals.url + 'api/signin';
   cookieValue = 'UNKNOWN'; 
 
   	constructor(private http: HttpClient, private cookieService : CookieService) { }
@@ -71,9 +73,7 @@ export class SignInComponent implements OnInit {
     }
 
     displayName() {
-
-      var label = document.getElementById('display_name_sign_in');
-
-      label.innerHTML = 'Welcome, ' + this.name + '!';
+        const label = document.getElementById('logged-in');
+        label.innerHTML = 'Logged In!';
     }
 }

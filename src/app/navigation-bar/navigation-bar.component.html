@@ -1,38 +1,21 @@
-<nav class="navbar navbar-fixed-top" id="navbar">
+<div class="navbar-fixed nav-extended">
+    <nav class="grey darken-2">
+        <div class="nav-wrapper">
+            <div class="hide-on-small-only">
+                <a href="#!" class="brand-logo center"><i class="material-icons">queue</i>EasyWait</a>
+            </div>
 
-	<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navigation" (click) = "toggleState()">
+            <ul class="right">
+                <li><a routerLink="/customers">CUSTOMER</a></li>
+                <li><a routerLink="/vendor">VENDOR</a></li>
+                <li><a routerLink="/profile">PROFILE</a></li>
+            </ul>
+        </div>
 
-		        &#9776;
-
-	</button>
-
-	<a class="navbar-brand float-xs-right float-sm-left"><img class='img-fluid' src='app_icon.png'/></a>
-
-	<div class="collapse navbar-toggleable-xs" id="navigation"
-		[ngClass] = "{ 'in' : isIn }">
-	    <ul class="nav navbar-nav float-sm-right">
-	    
-	        <li class="nav-item">
-	            <a class="nav-link" routerLink="/about">ABOUT</a>
-	        </li>
-
-	        <li class="nav-item">
-	            <a class="nav-link" routerLink="/customers">CUSTOMERS</a>
-	        </li>
-
-	        <li class="nav-item">
-
-	            <a class="nav-link" routerLink="/vendor">VENDOR</a>
-
-	        </li>
-
-			<li class="nav-item">
-
-	            <a class="nav-link" routerLink="/profile">PROFILE</a>
-
-	        </li>
-
-	    </ul>  
-	</div>
-
-</nav>
+        <div class="nav-content">
+            <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal pulse left left-align" routerLink="/about">
+                <i class="material-icons">home</i>
+            </a>
+        </div>
+    </nav>
+</div>

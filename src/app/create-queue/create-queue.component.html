@@ -1,60 +1,83 @@
-<!-- <div align="center" id="create_queue" class="row">
-	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+<div class="row">
+    <br><br><br>
 
-	</div>
-	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <div class="row">
+        <div class="col s12 m4 l2"></div>
 
-	      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		      		
-			<h3 style="color: #546e7a">Add a New Queue</h3>
-
-			<br>
-
-				<div class="form-inline">
-					<input class = "form-control" [(ngModel)] = "queue_name" placeholder="Name your Queue" (keyup.enter)="onKeyUp()">
-
-				</div>
-
-			<button type="button" class="btn btn-success" (click)="onClick()">Add</button><br><br><br><br>
-		
-	      </div>
-
-	      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-
-			<div id="q_list">
-				<a style="width: 40%" id="q_list" href="#" class="list-group-item list-group-item-action list-group-item-success" *ngFor = 'let queuedetail of queuelist'>
-
-					{{queuedetail.id}}: {{queuedetail.name}}
-
-				</a>
-			</div>
-			
-	      </div>
-
+        <div class="col s12 m4 l8">
+            <div class="chip hoverable amber">Create</div>
+            <div class="chip hoverable amber">Settings</div>
+            <div class="chip hoverable amber">Vendor</div>
+            <div class="chip hoverable amber">Manage</div>
+            <div class="chip hoverable amber">Queue</div>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="col s12 m4 l2"></div>
+
+        <div class="col s12 m4 l8">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card hoverable">
+                        <div class="card-content black-text center-align">
+                            <span class="card-title">Create a new Queue</span>
+
+                            <div class="input-field col s12 hoverable">
+                                <i class="material-icons prefix">add_circle</i>
+                                <input class="form-control" [(ngModel)]="queue_name" placeholder="Queue Name" (keyup.enter)="onKeyUp()">
+                            </div>
+
+                            <br><br><br>
+                        </div>
+
+                        <div class="card-panel right-align">
+                            <button type="button" class="btn btn-success hoverable" (click)="onClick()">Add</button><br>
+
+                            <br><br>
+
+                            <div id="q_list" class="card-panel hoverable center">
+                                <span class="card-title">Queue Inventory</span>
+
+                                <div class="row list">
+                                    <div class="col s6 left-align">Name</div>
+                                    <div class="col s3 left-align">ID</div>
+                                    <div class="col s3 left-align">Options</div>
+                                </div>
+
+                                <a id="q_list" href="#" class="list-group-item list-group-item-action list-group-item-success" *ngFor='let queuedetail of queuelist'>
+                                    <div class="row hoverable list stripped left-align">
+                                        <div class="col s6">
+                                            <div class="chip hoverable">
+                                                <img src="../../assets/yuna.jpg" alt="Contact Person"> {{queuedetail.name}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col s3">
+                                            <div class="chip hoverable">
+                                                {{queuedetail.id}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col s3">
+                                            <a class="btn-floating waves-effect waves-light grey darken-2 hoverable"><i class="material-icons">arrow_back</i></a>
+                                            <a class="btn-floating waves-effect waves-light grey darken-2 hoverable"><i class="material-icons">arrow_forward</i></a>
+                                            <a class="btn-floating btn-small waves-effect waves-light red hoverable"><i class="material-icons">delete_forever</i></a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m4 l2"></div>
+    </div>
+
+    <br><br><br>
 
     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-
     </div>
-
-
-</div> -->
-<div align="center" id="create_queue">
-
-	<h3 style="color: #546e7a">Add a New Queue</h3>
-
-		<div class="form-inline">
-			<input class = "form-control" [(ngModel)] = "queue_name" placeholder="Name your Queue" (keyup.enter)="onKeyUp()">				
-		</div>
-
-	<button type="button" class="btn btn-success" (click)="onClick()">Add</button><br><br><br><br>
-
-	<div id="q_list">
-		<a style="width: 40%" id="q_list" href="#" class="list-group-item list-group-item-action list-group-item-success" *ngFor = 'let queuedetail of queuelist'>
-
-			{{queuedetail.id}}: {{queuedetail.name}}
-
-		</a>
-	</div>
-
 </div>
