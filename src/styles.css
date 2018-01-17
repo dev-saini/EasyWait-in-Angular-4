@@ -1,40 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
 
-@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+    background: #f5f5f5;
+}
 
 h1 {
-
 	font-family: 'Alegreya Sans', sans-serif;
 }
 
 h3 {
-
 	font-family: 'Alegreya Sans', sans-serif;
 }
 
 h4 {
-
 	font-family: 'Alegreya Sans', sans-serif;
 }
 
 button {
-
 	font-family: 'Alegreya Sans', sans-serif;
 }
 
 input {
-
 	font-family: 'Alegreya Sans', sans-serif;
 }
-
-body {     
-	background-image: url('assets/background3.jpg'); 	
-	background-size:100%; 	
-	background-repeat: repeat; 	
-	width: 100%; 	
-
- }
-
- /*body {
- 	 background-image: '../assets/background5.jpg';
- }*/

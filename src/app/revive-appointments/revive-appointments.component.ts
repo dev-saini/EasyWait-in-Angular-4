@@ -10,7 +10,6 @@ import * as myGlobals from '../globals';
   templateUrl: './revive-appointments.component.html',
   styleUrls: ['./revive-appointments.component.css']
 })
-
 export class ReviveAppointmentsComponent implements OnInit {
 
   private url = myGlobals.url + 'api/queue/';
@@ -49,8 +48,8 @@ export class ReviveAppointmentsComponent implements OnInit {
             			this.appointments_flag = 0;
           }
 
-     			this.load_component = true;	
-					console.log(this.queue_id);
+          			this.load_component = true;	
+					console.log(response);
 					
 					this.appointments = response['appointments'];
 
