@@ -14,9 +14,16 @@
             </div>
 
             <div class="row hoverable list stripped left-align">
+
                 <div class="col s3">
                     <div class="chip hoverable white teal-text">
                         {{this.queue_id}}
+
+                <div class="col s6">
+                    <div class="chip hoverable">
+                         <img src="../../assets/details.png" alt="Contact Person"> {{this.queue_name}} 
+
+
                     </div>
                 </div>
 
@@ -47,11 +54,63 @@
                 </div>
 
                 <ng-template #elseBlock>
-                    <ul>
-                        <li *ngFor='let details of appointments'>
-                            <h5> {{details.reference}} : {{details.position}} </h5>
+                    <!--<ul class="collection with-header">
+                        <li class="collection-header"><h4>Appointments</h4></li>
+                        <li class="collection-item" *ngFor='let details of appointments'>
+                            <h5> {{details.reference}} : {{details.position}} 
+                                <a class="chip">Cancel<i class="close material-icons" (click)="onClickCancel(details.position)">close</i>
+                                 </a>
+                            </h5>
                         </li>
-                    </ul>
+                    </ul> -->
+
+                    <span class="card-title">Appointments</span>
+
+                    <!-- <table class = "centered highlight">
+
+                        <tbody *ngFor='let details of appointments'>
+                            <tr>
+                                <td> 
+                                    <div class="chip red white-text hoverable">{{details.reference}} 
+                                    </div>
+                                </td> 
+                                <td> 
+                                    <div class="chip yellow black-text hoverable">{{details.position}} 
+                                    </div>
+                                </td>
+                                <td> <a class="chip">Cancel<i class="close material-icons" (click)="onClickCancel(details.position)">close</i>
+                                 </a> </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+                    <div class="row list">
+                        <div class="col s4 center-align">Reference Name</div>
+                        <div class="col s4 center-align">Position</div>
+                        <div class="col s4 center-align"></div>
+                    </div>
+
+                    <div *ngFor='let details of appointments' class="row hoverable list stripped center-align">
+
+                        <div class="col s4">
+                            <div class="chip red white-text hoverable">
+                                {{details.reference}} 
+                            </div>
+                        </div>
+
+                        <div class="col s4">
+                            <div class="chip yellow black-text hoverable">
+                                {{details.position}} 
+                            </div>
+                        </div>
+
+                        <div class="col s4">
+                            <a (click)="onClickCancel(details.position)" class="chip  waves-effect waves-light btn pulse">
+                                <i class="material-icons" (click)="onClickCancel(details.position)">cancel
+                                </i>
+                            </a>
+                        </div>
+                    </div>
                 </ng-template>
             </div>
         </div>

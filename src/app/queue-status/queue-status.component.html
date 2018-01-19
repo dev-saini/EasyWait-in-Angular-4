@@ -38,6 +38,7 @@
                             <button type="submit" class="btn btn-success hoverable" (click)="onClick()">Search</button><br>
 
 
+
 				<!-- <div *ngIf = 'load_component' align="center"> -->
 				<!--     <app-display-queue-status  -->
 				<!--      -->
@@ -54,6 +55,16 @@
                             <div *ngIf='load_component' align="center">
                                 <app-display-queue-status [queue_position]='queue_position' [queue_id]='queue_id' [accepting_appointments]='accepting_appointments' [appointments]='appointments' [appointments_flag]='appointments_flag'>
 
+                            <div *ngIf='load_component' align="center">
+                                <app-display-queue-status 
+                                
+                                [queue_position]='queue_position' 
+                                [queue_id]='queue_id' 
+                                [accepting_appointments]='accepting_appointments' 
+                                [load_component]='load_component'
+                                [queue_name]='queue_name'>
+
+
                                 </app-display-queue-status>
                             </div>
 
@@ -67,6 +78,7 @@
         <div class="col s12 m4 l2"></div>
     </div>
 </div>
+
 
 
 
