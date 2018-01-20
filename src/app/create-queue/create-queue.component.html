@@ -44,6 +44,7 @@
                                     <div class="col s6 left-align">Name</div>
                                     <div class="col s2 left-align">Position</div>
                                     <div class="col s3 left-align">Options</div>
+                                    <!-- <div class="col s3 left-align">Appointments</div> -->
                                 </div>
 
                                 <a id="q_list" class="list-group-item list-group-item-action list-group-item-success" *ngFor='let queuedetail of queuelist'>
@@ -66,19 +67,12 @@
                                             </div>
                                         </div>
 
-
                                        <div class="col s3">
                                             <a (click)="moveNext(queuedetail.id)" class="btn-floating waves-effect waves-light grey darken-2 hoverable"><i class="material-icons">arrow_forward</i></a>
                                             
                                             <a (click)="reset(queuedetail.id)" class="btn-floating btn-small waves-effect waves-light grey darken-2 hoverable"><i class="material-icons">refresh</i></a>
 
                                             <a class="btn-floating waves-effect waves-light red hoverable"><i class="material-icons">settings</i></a>
-
-                                        <div class="col s3">
-                                            <a class="btn-floating waves-effect waves-light grey darken-2 hoverable"><i class="material-icons">arrow_forward</i></a>
-                                            <a class="btn-floating waves-effect waves-light grey darken-2 hoverable"><i class="material-icons">settings</i></a>
-                                            <a class="btn-floating btn-small waves-effect waves-light red hoverable"><i class="material-icons">delete_forever</i></a>
-
                                         </div>
                                     </div>
                                 </a>

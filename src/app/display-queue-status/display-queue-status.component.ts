@@ -191,7 +191,7 @@ import * as myGlobals from '../globals';
     }
 
 
-     getAppointments() {
+    getAppointments() {
 
     this.http.get(this.url + this.queue_id + '/appointment', {
 
